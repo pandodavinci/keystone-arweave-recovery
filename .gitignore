@@ -1,0 +1,6 @@
+/target/
+/private-output/
+arweave-keyfile*.json
+*.jwk
+*.tar
+.DS_Store

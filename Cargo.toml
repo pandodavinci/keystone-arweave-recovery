@@ -1,0 +1,22 @@
+[package]
+name = "keystone-arweave-checker"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+base64 = "=0.22.1"
+bip39 = "=2.2.0"
+rand_chacha = "=0.3.1"
+rand_core = "=0.6.4"
+rpassword = "=7.4.0"
+rsa = { version = "=0.8.2", default-features = false }
+sha2 = "=0.10.9"
+zeroize = "=1.8.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+

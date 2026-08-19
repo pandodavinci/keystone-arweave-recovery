@@ -1,0 +1,4 @@
+interface:
+  display_name: "Recover Keystone Arweave"
+  short_description: "Guide safe Keystone Arweave wallet recovery"
+  default_prompt: "Use $recover-keystone-arweave to guide me through verifying and recovering a Keystone-created Arweave wallet safely."
