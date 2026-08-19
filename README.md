@@ -28,7 +28,7 @@ The documented recovery workflow requires Docker Desktop on macOS or Windows,
 or a Docker-compatible engine on Linux. Docker is used to provide the verified
 build and network-disabled runtime.
 
-The public-address checker can also run directly with Rust 1.85.1:
+The public-address checker can also run directly with Rust 1.88.0:
 
 ```sh
 cargo run --release --locked --bin keystone-arweave-checker
@@ -88,10 +88,12 @@ or reading the recovery phrase or generated keyfile.
 
 ## Verification
 
-- Rust 1.85.1
+- Rust 1.88.0
 - `rsa` 0.8.2
 - `rand_chacha` 0.3.1
+- `rpassword` 7.5.0
 - Locked dependency graph in `Cargo.lock`
+- Docker builder and runtime images pinned by digest
 - Automated Keystone 3, first-generation Keystone, and dummy BIP39 vectors
 
 See [ANALYSIS.md](ANALYSIS.md) for the exact Keystone/Wander source references
@@ -105,3 +107,6 @@ and [RECOVERY-SUMMARY.md](RECOVERY-SUMMARY.md) for the complete safety workflow.
 - Never put the phrase in commands, files, environment variables, chats, or
   agent prompts.
 - Docker isolation does not protect a compromised host or keylogger.
+- The pinned `rsa` version exists only to reproduce Keystone's deterministic
+  key generation. Do not reuse it for network-observable RSA signing or
+  decryption.
