@@ -10,7 +10,7 @@ bip39 = "=2.2.0"
 rand_chacha = "=0.3.1"
 rand_core = "=0.6.4"
 rpassword = "=7.5.0"
-rsa = { version = "=0.8.2", default-features = false }
+rsa = { version = "=0.9.10", default-features = false }
 sha2 = "=0.10.9"
 zeroize = "=1.8.2"
 
